@@ -837,3 +837,7 @@ Hyperlink -
 
    ```
    - Execute micro mordred (see - https://github.com/chaoss/grimoirelab-sirmordred#micro-mordred-)
+   
+   #### How to query number of files?
+   We can query the areas of code (aka aoc) index using python ad-hoc libraries like elasticsearch-dsl or low-level libraries like requests. The schema of the index is at https://github.com/chaoss/grimoirelab-elk/blob/master/schema/areas_of_code.csv. Details about the ElasticSearch query language is at https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html.
+   In areas of code, we can get file action, which can be merged, added, deleted and others. To calculate the overall number of files, calculate the number of added files, and the number of deleted files. The difference between the two numbers would be the file number we want. 
